@@ -29,7 +29,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
   bool isLoading = true;
   String? errorMessage;
 
-  // Reemplaza con tu API key de OpenWeatherMap
+  
   final String apiKey = 'bd60db2f448ec8ee18c289e41da52df9';
 
   @override
@@ -40,8 +40,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
   Future<void> fetchWeather() async {
     try {
-      // Coordenadas de Londres (lat: 51.508, lon: -0.126)
-      // Puedes cambiarlas por tu ciudad usando lat/lon
+      
       final response = await http.get(
         Uri.parse(
           'https://api.openweathermap.org/data/2.5/weather?lat=20.659698&lon=-103.349609&units=metric&appid=$apiKey',
@@ -74,7 +73,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
       ),
       body: Center(
         child: isLoading
-            ? const CircularProgressIndicator() // Indicador de carga
+            ? const CircularProgressIndicator() 
             : errorMessage != null
                 ? Text(
                     errorMessage!,
